@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="12.0.001">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="12.0.001" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="read_csv" compatibility="12.0.001" expanded="true" height="68" name="Read CSV (2)" width="90" x="45" y="34">
+        <parameter key="csv_file" value="C:/Users/light/OneDrive/Documents/435_DataScience_Project/sequences_test.txt"/>
+        <parameter key="column_separators" value=","/>
+        <parameter key="trim_lines" value="false"/>
+        <parameter key="multiline_text" value="false"/>
+        <parameter key="use_quotes" value="false"/>
+        <parameter key="quotes_character" value="&quot;"/>
+        <parameter key="escape_character" value="\"/>
+        <parameter key="skip_comments" value="false"/>
+        <parameter key="comment_characters" value="#"/>
+        <parameter key="starting_row" value="1"/>
+        <parameter key="parse_numbers" value="false"/>
+        <parameter key="decimal_character" value="."/>
+        <parameter key="grouped_digits" value="false"/>
+        <parameter key="grouping_character" value=","/>
+        <parameter key="infinity_representation" value=""/>
+        <parameter key="date_format" value=""/>
+        <parameter key="use_header_row" value="false"/>
+        <parameter key="header_row" value="1"/>
+        <parameter key="first_row_as_names" value="true"/>
+        <list key="annotations"/>
+        <parameter key="time_zone" value="America/New_York"/>
+        <parameter key="locale" value="English (United States)"/>
+        <parameter key="encoding" value="SYSTEM"/>
+        <parameter key="read_all_values_as_polynominal" value="true"/>
+        <list key="data_set_meta_data_information"/>
+        <parameter key="read_not_matching_values_as_missings" value="false"/>
+      </operator>
+      <operator activated="true" class="blending:rename" compatibility="12.0.001" expanded="true" height="82" name="Rename" width="90" x="179" y="34">
+        <list key="rename attributes">
+          <parameter key="att1" value="sequence"/>
+        </list>
+        <parameter key="from_attribute" value=""/>
+        <parameter key="to_attribute" value=""/>
+      </operator>
+      <operator activated="true" class="blending:generate_id" compatibility="12.0.001" expanded="true" height="82" name="Generate ID" width="90" x="313" y="34">
+        <parameter key="create_nominal_ids" value="false"/>
+        <parameter key="offset" value="0"/>
+      </operator>
+      <operator activated="true" class="blending:generate_columns" compatibility="12.0.001" expanded="true" height="82" name="Generate Attributes" width="90" x="380" y="187">
+        <list key="function_descriptions">
+          <parameter key="Seq_length" value="length(sequence)"/>
+          <parameter key="freq_A" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;A&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_C" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;C&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_D" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;D&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_E" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;E&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_F" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;F&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_G" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;G&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_H" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;H&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_I" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;I&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_K" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;K&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_L" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;L&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_M" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;M&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_N" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;N&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_P" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;P&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_Q" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;Q&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_R" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;R&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_S" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;S&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_T" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;T&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_V" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;V&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_W" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;W&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="freq_Y" value="if(length(sequence) &gt; 0, (length(sequence) - length(replaceAll(sequence, &quot;Y&quot;, &quot;&quot;)))/length(sequence), 0)"/>
+          <parameter key="inverse_length" value="if(length(sequence) &gt; 0, 1.0 / length(sequence), 0)"/>
+          <parameter key="cnt_A" value="length(sequence) - length(replaceAll(sequence, &quot;A&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_C" value="length(sequence) - length(replaceAll(sequence, &quot;C&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_D" value="length(sequence) - length(replaceAll(sequence, &quot;D&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_E" value="length(sequence) - length(replaceAll(sequence, &quot;E&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_F" value="length(sequence) - length(replaceAll(sequence, &quot;F&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_G" value="length(sequence) - length(replaceAll(sequence, &quot;G&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_H" value="length(sequence) - length(replaceAll(sequence, &quot;H&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_I" value="length(sequence) - length(replaceAll(sequence, &quot;I&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_K" value="length(sequence) - length(replaceAll(sequence, &quot;K&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_L" value="length(sequence) - length(replaceAll(sequence, &quot;L&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_M" value="length(sequence) - length(replaceAll(sequence, &quot;M&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_N" value="length(sequence) - length(replaceAll(sequence, &quot;N&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_P" value="length(sequence) - length(replaceAll(sequence, &quot;P&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_Q" value="length(sequence) - length(replaceAll(sequence, &quot;Q&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_R" value="length(sequence) - length(replaceAll(sequence, &quot;R&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_S" value="length(sequence) - length(replaceAll(sequence, &quot;S&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_T" value="length(sequence) - length(replaceAll(sequence, &quot;T&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_V" value="length(sequence) - length(replaceAll(sequence, &quot;V&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_W" value="length(sequence) - length(replaceAll(sequence, &quot;W&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_Y" value="length(sequence) - length(replaceAll(sequence, &quot;Y&quot;, &quot;&quot;))"/>
+          <parameter key="cnt_basic" value="cnt_K + cnt_R + cnt_H"/>
+          <parameter key="cnt_acidic" value="cnt_D + cnt_E"/>
+          <parameter key="cnt_aromatic" value="cnt_F + cnt_W + cnt_Y"/>
+          <parameter key="cnt_hydrophobic" value="cnt_A + cnt_V + cnt_I + cnt_L + cnt_M + cnt_F + cnt_W + cnt_Y + cnt_C"/>
+          <parameter key="cnt_polar" value="cnt_S + cnt_T + cnt_N + cnt_Q"/>
+          <parameter key="freq_basic" value="if(Seq_length &gt; 0, cnt_basic / Seq_length, 0)"/>
+          <parameter key="freq_acidic" value="if(Seq_length &gt; 0, cnt_acidic / Seq_length, 0)"/>
+          <parameter key="freq_aromatic" value="if(Seq_length &gt; 0, cnt_aromatic / Seq_length, 0)"/>
+          <parameter key="freq_hydrophobic" value="if(Seq_length &gt; 0, cnt_hydrophobic / Seq_length, 0)"/>
+          <parameter key="freq_polar" value="if(Seq_length &gt; 0, cnt_polar / Seq_length, 0)"/>
+          <parameter key="ratio_basic_acidic" value="(cnt_basic + 1.0) / (cnt_acidic + 1.0)"/>
+          <parameter key="ratio_polar_hydrophobic" value="(cnt_polar + 1.0) / (cnt_hydrophobic + 1.0)"/>
+          <parameter key="ratio_RK_D" value="(cnt_R + cnt_K + 1.0) / (cnt_D + 1.0)"/>
+          <parameter key="log_len" value="if(Seq_length &gt; 0, log(Seq_length), 0)"/>
+          <parameter key="len_sq" value="pow(Seq_length, 2)"/>
+          <parameter key="motif_RGG_cnt" value="( length(sequence) - length(replaceAll(sequence, &quot;RGG&quot;, &quot;&quot;)) ) / 3"/>
+          <parameter key="motif_KK_cnt" value="( length(sequence) - length(replaceAll(sequence, &quot;KK&quot;, &quot;&quot;)) ) / 2"/>
+          <parameter key="motif_RR_cnt" value="( length(sequence) - length(replaceAll(sequence, &quot;RR&quot;, &quot;&quot;)) ) / 2"/>
+          <parameter key="has_RGG" value="if( length(sequence) &gt; length(replaceAll(sequence, &quot;RGG&quot;, &quot;&quot;)), 1, 0 )"/>
+          <parameter key="has_KK" value="if( length(sequence) &gt; length(replaceAll(sequence, &quot;KK&quot;, &quot;&quot;)), 1, 0 )"/>
+          <parameter key="has_RR" value="if( length(sequence) &gt; length(replaceAll(sequence, &quot;RR&quot;, &quot;&quot;)), 1, 0 )"/>
+        </list>
+        <parameter key="keep_all_columns" value="true"/>
+        <parameter key="default_time_zone" value="America/New_York"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="12.0.001" expanded="true" height="68" name="Retrieve norm_model" width="90" x="514" y="34">
+        <parameter key="repository_entry" value="norm_model"/>
+      </operator>
+      <operator activated="true" class="apply_model" compatibility="12.0.001" expanded="true" height="82" name="Apply Model (2)" width="90" x="514" y="187">
+        <list key="application_parameters"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="12.0.001" expanded="true" height="68" name="Retrieve rf_best_model" width="90" x="648" y="34">
+        <parameter key="repository_entry" value="rf_best_model"/>
+      </operator>
+      <operator activated="true" class="apply_model" compatibility="12.0.001" expanded="true" height="82" name="Apply Model (3)" width="90" x="648" y="187">
+        <list key="application_parameters"/>
+      </operator>
+      <operator activated="true" class="blending:select_attributes" compatibility="12.0.001" expanded="true" height="82" name="Select Attributes" width="90" x="782" y="136">
+        <parameter key="type" value="include attributes"/>
+        <parameter key="attribute_filter_type" value="a subset"/>
+        <parameter key="select_attribute" value=""/>
+        <parameter key="select_subset" value="prediction(class)"/>
+        <parameter key="also_apply_to_special_attributes_(id,_label..)" value="false"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="12.0.001" expanded="true" height="82" name="Write CSV" width="90" x="916" y="85">
+        <parameter key="csv_file" value="C:/Users/light/OneDrive/Documents/435_DataScience_Project/Anthony_Lightfoot_Johnson.csv"/>
+        <parameter key="column_separator" value=","/>
+        <parameter key="write_attribute_names" value="false"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="date_format" value="yyyy-MM-dd HH:mm:ss"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <connect from_op="Read CSV (2)" from_port="output" to_op="Rename" to_port="example set input"/>
+      <connect from_op="Rename" from_port="example set output" to_op="Generate ID" to_port="example set input"/>
+      <connect from_op="Generate ID" from_port="example set output" to_op="Generate Attributes" to_port="table input"/>
+      <connect from_op="Generate Attributes" from_port="table output" to_op="Apply Model (2)" to_port="unlabelled data"/>
+      <connect from_op="Retrieve norm_model" from_port="output" to_op="Apply Model (2)" to_port="model"/>
+      <connect from_op="Apply Model (2)" from_port="labelled data" to_op="Apply Model (3)" to_port="unlabelled data"/>
+      <connect from_op="Retrieve rf_best_model" from_port="output" to_op="Apply Model (3)" to_port="model"/>
+      <connect from_op="Apply Model (3)" from_port="labelled data" to_op="Select Attributes" to_port="example set input"/>
+      <connect from_op="Select Attributes" from_port="example set output" to_op="Write CSV" to_port="input"/>
+      <connect from_op="Write CSV" from_port="through" to_port="result 1"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+      <portSpacing port="sink_result 3" spacing="0"/>
+    </process>
+  </operator>
+</process>
