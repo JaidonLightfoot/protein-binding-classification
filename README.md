@@ -10,54 +10,54 @@ Given a protein’s amino-acid sequence, the task is to predict whether the prot
 
 Data:
 
-Training dataset: ~8,800 protein sequences with known interaction labels
+-Training dataset: ~8,800 protein sequences with known interaction labels
 
-Blind test dataset: ~8,800 unlabeled protein sequences
+-Blind test dataset: ~8,800 unlabeled protein sequences
 
-Input format: raw amino-acid sequences (variable length)
+-Input format: raw amino-acid sequences (variable length)
 
-(Datasets were provided as part of a university course assignment.)
+-(Datasets were provided as part of a university course assignment.)
 
 
 Feature Engineering:
 
-Each protein sequence was converted into a fixed-length numeric feature vector, including:
+-Each protein sequence was converted into a fixed-length numeric feature vector, including:
 
-Amino-acid counts and frequencies
+-Amino-acid counts and frequencies
 
-Sequence length 
+-Sequence length 
 
-Biochemical group frequencies (hydrophobic, polar, acidic, basic, aromatic)
+-Biochemical group frequencies (hydrophobic, polar, acidic, basic, aromatic)
 
-Motif-based indicators related to nucleic-acid binding
+-Motif-based indicators related to nucleic-acid binding
 
-Ratio-based and derived features
+-Ratio-based and derived features
 
 
 Model Designs:
 
-Three model designs were developed and evaluated using 5-fold cross-validation:
+-Three model designs were developed and evaluated using 5-fold cross-validation:
 
-Design 1: Basic sequence composition features with a Decision Tree classifier
+-Design 1: Basic sequence composition features with a Decision Tree classifier
 
-Design 2: Expanded biochemical features with a Decision Tree to measure feature impact
+-Design 2: Expanded biochemical features with a Decision Tree to measure feature impact
 
-Design 3: Full feature set with Z-Normalization and a tuned Random 
+-Design 3: Full feature set with Z-Normalization and a tuned Random 
 
-Design 3 achieved the best overall performance and was selected for blind test prediction
+-Design 3 achieved the best overall performance and was selected for blind test prediction
 
 
 Evaluation based on:
 
-Accuracy
+-Accuracy
 
-Sensitivity and specificity (per class)
+-Sensitivity and specificity (per class)
 
-Matthews Correlation Coefficient (MCC)
+-Matthews Correlation Coefficient (MCC)
 
-Average MCC across all four classes
+-Average MCC across all four classes
 
-MCC was used as the primary metric due to class imbalance.
+-MCC was used as the primary metric due to class imbalance.
 
 
 Blind Test Prediction:
@@ -66,17 +66,17 @@ The final Random Forest model was trained on the full training dataset and appli
 
 Tools & Technologies:
 
-RapidMiner
+-RapidMiner
 
-Decision Trees
+-Decision Trees
 
-Random Forest
+-Random Forest
 
-Feature Engineering
+-Feature Engineering
 
-Cross-Validation
+-Cross-Validation
 
-Model Evaluation for Imbalanced Data
+-Model Evaluation for Imbalanced Data
 
 
 
