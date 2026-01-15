@@ -1,18 +1,26 @@
 Protein–DNA/RNA Interaction Prediction:
+
 This project implements a machine learning system that classifies protein sequences into four categories: DNA-binding, RNA-binding, dual DNA/RNA-binding (DRNA), or non-binding. The goal was to build an end-to-end prediction pipeline starting from raw amino-acid sequences and evaluate multiple model designs to improve classification performance.
 
 The project was completed using RapidMiner and focuses on feature engineering, model comparison, and evaluation on class-imbalanced biological data.
 
 Problem Overview:
+
 Given a protein’s amino-acid sequence, the task is to predict whether the protein interacts with DNA, RNA, both, or neither. The dataset is highly imbalanced, with relatively few DRNA proteins, making evaluation and model selection especially important.
 
 Data:
+
 Training dataset: ~8,800 protein sequences with known interaction labels
+
 Blind test dataset: ~8,800 unlabeled protein sequences
+
 Input format: raw amino-acid sequences (variable length)
+
 (Datasets were provided as part of a university course assignment.)
 
+
 Feature Engineering:
+
 Each protein sequence was converted into a fixed-length numeric feature vector, including:
 Amino-acid counts and frequencies
 Sequence length features
