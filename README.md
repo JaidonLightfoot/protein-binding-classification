@@ -1,14 +1,14 @@
-Protein–DNA/RNA Interaction Prediction:
+## Protein–DNA/RNA Interaction Prediction:
 
 This project implements a machine learning system that classifies protein sequences into four categories: DNA-binding, RNA-binding, dual DNA/RNA-binding (DRNA), or non-binding. The goal was to build an end-to-end prediction pipeline starting from raw amino-acid sequences and evaluate multiple model designs to improve classification performance.
 
 The project was completed using RapidMiner and focuses on feature engineering, model comparison, and evaluation on class-imbalanced biological data.
 
-Problem Overview:
+## Problem Overview:
 
 Given a protein’s amino-acid sequence, the task is to predict whether the protein interacts with DNA, RNA, both, or neither. The dataset is highly imbalanced, with relatively few DRNA proteins, making evaluation and model selection especially important.
 
-Data:
+## Data:
 
 -Training dataset: ~8,800 protein sequences with known interaction labels
 
@@ -19,7 +19,7 @@ Data:
 -(Datasets were provided as part of a university course assignment.)
 
 
-Feature Engineering:
+## Feature Engineering:
 
 -Each protein sequence was converted into a fixed-length numeric feature vector, including:
 
@@ -34,7 +34,7 @@ Feature Engineering:
 -Ratio-based and derived features
 
 
-Model Designs:
+## Model Designs:
 
 -Three model designs were developed and evaluated using 5-fold cross-validation:
 
@@ -47,7 +47,7 @@ Model Designs:
 -Design 3 achieved the best overall performance and was selected for blind test prediction
 
 
-Evaluation based on:
+## Evaluation based on:
 
 -Accuracy
 
@@ -60,11 +60,11 @@ Evaluation based on:
 -MCC was used as the primary metric due to class imbalance.
 
 
-Blind Test Prediction:
+## Blind Test Prediction:
 
 The final Random Forest model was trained on the full training dataset and applied to the blind test dataset using a stored preprocessing and inference pipeline. Predictions were exported as a text file containing one predicted label per protein sequence.
 
-Tools & Technologies:
+## Tools & Technologies:
 
 -RapidMiner
 
